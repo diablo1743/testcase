@@ -1,9 +1,10 @@
-{% extends 'mainapp/index.html' %}
+{% extends 'mainapp/basic.html' %}
 
-{% block content %}
+{% block auth %}
 <form action="/login/" method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="OK">
+    <input type="hidden" name="next" value="{% if next %}{{ next }}{% else %}{% url 'main:index' %}{% endif %}" />
 </form>
 {% endblock %}

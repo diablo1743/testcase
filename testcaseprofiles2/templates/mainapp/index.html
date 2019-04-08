@@ -1,4 +1,24 @@
 {% extends 'mainapp/basic.html' %}
 
 {% block content %}
+<table border="1">
+  <tr>
+    <td>{{ fields.first_name}}</td>
+    <td>{{ fields.last_name }}</td>
+    <td>{{ fields.email }}</td>
+    <td>{{ fields.eye }}</td>
+    <td>{{ fields.country }}</td>
+    <td>{{ fields.password }}</td>
+  </tr>
+    {% for user in users_info %}
+  <tr>
+    <td>{{ user.first_name }}</td>
+    <td>{{ user.last_name }}</td>
+    <td>{{ user.email }}</td>
+    <td>{{ user.eye }}</td>
+    <td>{{ user.country }}</td>
+    <td>{{ user.password }}</td>
+  </tr>
+    {% endfor %}
+</table>
 {% endblock %}

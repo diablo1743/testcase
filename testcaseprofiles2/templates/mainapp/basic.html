@@ -6,10 +6,14 @@
 </head>
 <body>
     <p>Hello, {% if user.is_authenticated %}{{ user.username }}.
+        <a href="{% url 'account' %}">Аккаунт</a>
         <a href="{% url 'logout' %}">Разлогиниться</a>
             {% else %}Anonymus. <a href="{% url 'login' %}">Залогиниться</a>{% endif %}
         <a href="{% url 'index' %}">На главную</a>
     </p>
+    {% block auth %}
+    {% endblock %}
+
     {% block content %}
     {% endblock %}
 </body>
